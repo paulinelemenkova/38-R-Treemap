@@ -1,8 +1,7 @@
-# Рисуем вафельный график через библиотеку ggplot2
-# library
+# Рисуем древесно-разветвленную диаграмму через библиотеку treemap
 library(treemap)
  
-# шаг-1. Строим датасет / Build Dataset
+# шаг-1. Вначале строим датасет / Build Dataset
 group=c(rep("tectonics",4),rep("bathymetry",10),rep("geology",2))
 subgroup=paste(c("Mariana Plate", "Philippine Plate", "Pacific Plate", "Caroline Plate", 
 		"Depth \n(absolute maximum)", "Slope angle", "Aspect degree", "Depth (Mean)", "Depth (Median)", "Aspect class", "Steepness class", "Depth \n(1 quart.)", "Depth \n(3 quart.)", "tg angle", 
@@ -10,7 +9,7 @@ subgroup=paste(c("Mariana Plate", "Philippine Plate", "Pacific Plate", "Caroline
 value=c(22,14,18,7,12,10,6,4,5,9,10,3,2,7,14,17)
 data=data.frame(group,subgroup,value)
  
-# шаг-2. Рисуем разветвленную диаграмму // treemap
+# шаг-2. Теперь рисуем разветвленную диаграмму // treemap
 treemap(data,
 	title = "Mariana Trench Impact Factors",
 	index=c("group","subgroup"),
